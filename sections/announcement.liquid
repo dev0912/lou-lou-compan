@@ -1,15 +1,19 @@
 {%- if section.settings.enable_bar -%}
   {%- unless section.settings.home_page_only and template != 'index' -%}
-    <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
+    <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar" data-enable_rotate="{{section.settings.enable_rotate}}" data-rotate_time="{{section.settings.rotate_time}}">
       <div class="AnnouncementBar">
         <div class="AnnouncementBar__Wrapper">
-          <p class="AnnouncementBar__Content Heading">
-            {%- if section.settings.link -%}
-              <a href="{{ section.settings.link }}">{{ section.settings.content | escape }}</a>
-            {%- else -%}
-              {{ section.settings.content | escape }}
-            {%- endif -%}
-          </p>
+          {% if section.blocks.size > 0 %}
+            {%- for block in section.blocks -%}
+            <p class="AnnouncementBar__Content Heading">
+              {%- if block.settings.link -%}
+                <a href="{{ block.settings.link }}">{{ block.settings.content | escape }}</a>
+              {%- else -%}
+                {{ block.settings.content | escape }}
+              {%- endif -%}
+            </p>
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     </section>
@@ -30,6 +34,7 @@
 {% schema %}
 {
   "name": "Announcement bar",
+  "max_blocks": 5,
   "settings": [
     {
       "type": "checkbox",
@@ -44,6 +49,18 @@
       "default": false
     },
     {
+      "type": "checkbox",
+      "id": "enable_rotate",
+      "label": "Enable rotate",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "rotate_time",
+      "label": "Rotate time(ms)",
+      "default": "1500"
+    },
+    {
       "type": "color",
       "id": "background",
       "label": "Background",
@@ -54,17 +71,25 @@
       "id": "text_color",
       "label": "Text",
       "default": "#ffffff"
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "text",
-      "id": "content",
-      "label": "Text",
-      "default": "Announce something here"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Text",
+          "default": "20% Off Site Wide with: GIVETHANKS20 Through 11/16"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
     }
   ]
 }

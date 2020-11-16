@@ -35,7 +35,7 @@ document.addEventListener('variant:changed', function(event) {
   });
 
 
-
+  var $announcementFlickity;
   $(document).ready(function() {
     $('body').on('click', '[name="checkout"], [name="goto_pp"], [name="goto_gc"]', function() {
       if ($('#agree').is(':checked')) {
@@ -46,4 +46,29 @@ document.addEventListener('variant:changed', function(event) {
         return false;
       }
     });
+
+    
+    var rotate_time = $('[data-section-type="announcement-bar"]').data('rotate_time');
+    $announcementFlickity = $('[data-section-type="announcement-bar"] .AnnouncementBar__Wrapper').flickity({
+      prevNextButtons: false,
+      draggable: false,
+      pageDots: false,
+      contain: true,
+      wrapAround: true,
+      autoPlay: $('[data-section-type="announcement-bar"]').data('enable_rotate') ? true : false,
+      autoPlay: rotate_time != '' ? Number(rotate_time) : 1500
+    }); 
+    
+  });
+
+  
+  document.addEventListener('shopify:section:load', function(event) {
+    if(event.detail.sectionId == 'announcement') {
+      console.log("HERE IS ACCOUNT BAR", $announcementFlickity)
+      $announcementFlickity.flickity('destroy')
+
+      setTimeout(function(){
+        $announcementFlickity.flickity()
+      }, 500)
+    }
   });
