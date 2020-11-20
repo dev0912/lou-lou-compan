@@ -426,6 +426,33 @@ $widescreen:       "screen and (min-width: 1500px)";
   }
 }
 
+/* Animation */
+.fade  
+{ 
+  -webkit-animation-name: fade-image; 
+  -webkit-animation-duration: 1.5s; 
+  animation-name: fade-image; 
+  animation-duration: 1.5s; 
+} 
+  
+@-webkit-keyframes fade-image 
+{ 
+  from {opacity: .4}  
+  to {opacity: 1} 
+} 
+  
+@keyframes fade-image 
+{ 
+  from {opacity: .4}  
+  to {opacity: 1} 
+} 
+  
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px)  
+{ 
+  .text {font-size: 11px} 
+} 
+
 /*------------------------------------
  *   Grid LAYOUT
  *------------------------------------*/
@@ -11810,6 +11837,14 @@ p.MegaMenu__PushSubHeading.Heading.Text--subdued.u-h7 {
   letter-spacing: 3px;
   display: block;
   width: 100%;
+
+  .Heading {
+    display: none;
+  }
+
+  .active { 
+    border-color: #666; 
+  } 
 }
 
 
@@ -13194,12 +13229,21 @@ div#Huratips-Pagination {
   }
   .u-h1 {
     margin: 0;
+
+    @media screen and (max-width: 420px) {
+      font-size: 22px;
+      letter-spacing: 3px;
+    }
   }
 
   .sub-title {
     font-family: "gotham book";
     font-size: 20px;
     margin-top: 15px;
+
+    @media screen and (max-width: 420px) {
+      font-size: 18px;
+    }
   }
 
   .video-content {

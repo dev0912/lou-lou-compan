@@ -47,28 +47,35 @@ document.addEventListener('variant:changed', function(event) {
       }
     });
 
-    
+
+
     var rotate_time = $('[data-section-type="announcement-bar"]').data('rotate_time');
-    $announcementFlickity = $('[data-section-type="announcement-bar"] .AnnouncementBar__Wrapper').flickity({
-      prevNextButtons: false,
-      draggable: false,
-      pageDots: false,
-      contain: true,
-      wrapAround: true,
-      autoPlay: $('[data-section-type="announcement-bar"]').data('enable_rotate') ? true : false,
-      autoPlay: rotate_time != '' ? Number(rotate_time) : 1500
-    }); 
+    var slideIndex = 0; 
+    showSlides(); // call showslide method 
+      
+    function showSlides() { 
+      var i; 
     
-  });
-
-  
-  document.addEventListener('shopify:section:load', function(event) {
-    if(event.detail.sectionId == 'announcement') {
-      console.log("HERE IS ACCOUNT BAR", $announcementFlickity)
-      $announcementFlickity.flickity('destroy')
-
-      setTimeout(function(){
-        $announcementFlickity.flickity()
-      }, 500)
-    }
+      // get the array of divs' with classname image-sliderfade 
+      var slides = document.getElementsByClassName("AnnouncementBar__Content");    
+    
+      for (i = 0; i < slides.length; i++) { 
+          // initially set the display to  
+          // none for every image. 
+          slides[i].style.display = "none";  
+      } 
+    
+      // increase by 1, Global variable 
+      slideIndex++;  
+    
+      // check for boundary 
+      if (slideIndex > slides.length)  
+      { 
+          slideIndex = 1; 
+      } 
+    
+      slides[slideIndex - 1].style.display = "block"; 
+      setTimeout(showSlides, rotate_time != '' ? Number(rotate_time) : 3000);  
+    } 
+    
   });
