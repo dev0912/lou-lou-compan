@@ -89,8 +89,45 @@
     {% endif %}
   {% endfor %}
 </div>
+<script>
+var _igtv = [];
+var _igtvItems = [];
 
-<script async src="//www.instagram.com/embed.js"></script>
+
+function getIGphoto(url) {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: url,
+      success: function (data) {
+        resolve(data)
+      },
+      error: function (error) {
+        reject(error)
+      },
+    })
+  })
+}
+
+document.addEventListener("load:igtv", function(event){
+  var res = event.detail
+
+  _igtvItems.push({url: res.url, tab: res.tab})
+
+  if($('.video-content .video-item').length == _igtvItems.length) {
+    _igtvItems.forEach(function(r, i){
+      getIGphoto(r.url)
+      .then((data) => {
+        $('#shopify-section-tutorial-igtv .video-item:eq('+ r.tab +') blockquote').append($(data).find('.EmbedFrame').html());
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    })
+  }
+})
+</script>
+<script src="{{ 'instagram_embed.js' | asset_url }}" async></script>
+
 {% endif %}
 
 {% schema %}

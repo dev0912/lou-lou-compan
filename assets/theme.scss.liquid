@@ -13240,6 +13240,9 @@ div#Huratips-Pagination {
     font-family: "gotham book";
     font-size: 20px;
     margin-top: 15px;
+    color: #6a6a6a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 
     @media screen and (max-width: 420px) {
       font-size: 18px;
@@ -13266,12 +13269,20 @@ div#Huratips-Pagination {
     }
   }
 
+  .all-videos-header {
+    margin-top: 40px;
+  }
+
   .video-items {
     display: flex;
     flex-flow: wrap;
     align-items: flex-start;
     padding-top: 25px;
     margin: 0 -15px;
+
+    &.visible {
+      display: flex;
+    }
   }
 
   .video-item {
@@ -13279,7 +13290,7 @@ div#Huratips-Pagination {
     flex-flow: wrap;
     max-width: 33.333%;
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px 15px 40px;
 
     @media screen and (max-width: 965px) {
       max-width: 50%;
@@ -13293,18 +13304,62 @@ div#Huratips-Pagination {
         margin-right: auto !important;
       }
     }
+
+    blockquote {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        -webkit-filter: brightness(100%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+
+        &:hover {
+          -webkit-filter: brightness(110%);
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+
+          img {
+            opacity: .9;
+            -webkit-transform: scale3d(1.1,1.1,1);
+            transform: scale3d(1.1,1.1,1);
+          }
+        }
+
+        img {
+          width: 100%;
+          opacity: 1;
+          -webkit-transition: opacity 1s,-webkit-transform 1s;
+          transition: opacity 1s,-webkit-transform 1s;
+          transition: opacity 1s,transform 1s;
+          transition: opacity 1s,transform 1s,-webkit-transform 1s;
+        }
+      }
+    }
   }
 
   .item-head {
-    margin: 25px auto;
+    margin: 0 auto 5px;
     text-align: center;
 
     h3 {
       font-family: "baskervville";
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 16px;
+      line-height: 25px;
       text-transform: uppercase;
-      letter-spacing: 2.5px;
+      letter-spacing: 1.5px;
+      height: 60px;
+      display: flex;
+      align-items: center;
     }
   }
 }
