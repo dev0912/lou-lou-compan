@@ -232,8 +232,6 @@
           });
           const U = encodeURIComponent(JSON.stringify(h)),
               B = document.createElement('iframe');
-              console.log("HERE IS ######  src", y + '#' + U)
-              console.log("HERE IS ######  HHHHH", h)
               var _url = y + '#' + U
               _igtv.push(_url)
               document.dispatchEvent(new CustomEvent('load:igtv', {'detail':  {url: _url, tab: _igtv.length - 1 } }));

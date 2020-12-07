@@ -13320,6 +13320,20 @@ div#Huratips-Pagination {
         -ms-transition: all 1s ease;
         transition: all 1s ease;
 
+        &:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          content: "\f01d";
+          font-family: 'FontAwesome';
+          font-size: 100px;
+          color: #fff;
+          text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+
         &:hover {
           -webkit-filter: brightness(105%);
           -webkit-transition: all 1s ease;
@@ -13327,6 +13341,11 @@ div#Huratips-Pagination {
           -o-transition: all 1s ease;
           -ms-transition: all 1s ease;
           transition: all 1s ease;
+
+          &:before {
+            color: #eee;
+            opacity: .8;
+          }
 
           img {
             opacity: .9;

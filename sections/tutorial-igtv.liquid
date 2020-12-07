@@ -1,3 +1,6 @@
+<style>
+{% include 'font-awesome.css' %}
+</style>
 <div class="heading">
   {% if section.settings.title %}
   <h1 class="u-h1">{{ section.settings.title }}</h1>
@@ -127,6 +130,7 @@ document.addEventListener("load:igtv", function(event){
 })
 </script>
 <script src="{{ 'instagram_embed.js' | asset_url }}" async></script>
+
 
 {% endif %}
 
