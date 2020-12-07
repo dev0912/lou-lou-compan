@@ -78,13 +78,38 @@
       },
       "announcement": {
         "type": "announcement",
+        "blocks": {
+          "1b8a0f7b-2c97-453a-a65f-f38aa7ef849c": {
+            "type": "message",
+            "settings": {
+              "collection": "blankets",
+              "content_1": "BUNDLE ANY 2 SWADDLES + SAVE 10% WITH CODE: SWADDLES",
+              "content_2": "",
+              "content_3": ""
+            }
+          },
+          "5e85a994-fb7b-4dfa-9e3b-233a6517c8fa": {
+            "type": "message",
+            "settings": {
+              "collection": "everyday-dresses",
+              "content_1": "BUY 1 DRESS FOR $88 OR 2 FOR $150",
+              "content_2": "",
+              "content_3": ""
+            }
+          }
+        },
+        "block_order": [
+          "1b8a0f7b-2c97-453a-a65f-f38aa7ef849c",
+          "5e85a994-fb7b-4dfa-9e3b-233a6517c8fa"
+        ],
         "settings": {
           "enable_bar": true,
-          "home_page_only": false,
+          "rotate_time": "3000",
           "background": "#525658",
           "text_color": "#ffffff",
-          "content": "20% Off Site Wide with: GIVETHANKS20 Through 11\/16",
-          "link": "shopify:\/\/collections\/top-sellers"
+          "content_1": "FREE US SHIPPING FRIDAY-MONDAY WITH CODE: HOLIDAYMAIL",
+          "content_2": "",
+          "content_3": ""
         }
       },
       "header": {
@@ -779,6 +804,92 @@
           "title": "",
           "html": "<div id=\"mobile-subscribe\"><\/div>\n<div class=\"klaviyo-form-Sw4rfk\"><\/div>"
         }
+      },
+      "tutorial-igtv": {
+        "type": "tutorial-igtv",
+        "blocks": {
+          "aaed7aa5-677a-40cd-acc6-36550c6dd2c5": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "How to swaddle with a week old",
+              "igtv_id": "CA0tDAEAD5J"
+            }
+          },
+          "099a0112-7f15-4fbf-a1ac-61ecb09a4838": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "How to give a swaddle bath:",
+              "igtv_id": "CDt-np9j-ng"
+            }
+          },
+          "9208af45-6016-4c41-af6e-efeeaa0a67a6": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "Wearing a gown in a carseat",
+              "igtv_id": "CEAG5p-DPIR"
+            }
+          },
+          "dd1ef1e1-1e9c-4397-b6ea-d3c9c3c02eaa": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "How to burp your newborn",
+              "igtv_id": "CF-eHzYDc-r"
+            }
+          },
+          "dd9d235d-b799-48fd-aedb-a40522081471": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "tips for dressing your baby",
+              "igtv_id": "CDcQu6HDv1r"
+            }
+          },
+          "5ca2f261-54bf-40bb-b1f9-da6a05a5345d": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "how to calmly undress baby",
+              "igtv_id": "CDcRqFpjuvT"
+            }
+          },
+          "532f6683-e780-4e7a-8400-d4082850e9c2": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "How to do a classic (\"burrito\") swaddle",
+              "igtv_id": "CESHrCbjcur"
+            }
+          },
+          "34201904-1d73-413f-9a04-36f7291e4bd4": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "How to retie a knit headband",
+              "igtv_id": "CFzxuA9jnHc"
+            }
+          },
+          "5583a650-8d8f-4074-b7fa-1bc65db48495": {
+            "type": "instagram",
+            "settings": {
+              "video_title": "Mama and Baby workouts at home",
+              "igtv_id": "CFBDOapDSom"
+            }
+          }
+        },
+        "block_order": [
+          "aaed7aa5-677a-40cd-acc6-36550c6dd2c5",
+          "099a0112-7f15-4fbf-a1ac-61ecb09a4838",
+          "9208af45-6016-4c41-af6e-efeeaa0a67a6",
+          "dd1ef1e1-1e9c-4397-b6ea-d3c9c3c02eaa",
+          "dd9d235d-b799-48fd-aedb-a40522081471",
+          "5ca2f261-54bf-40bb-b1f9-da6a05a5345d",
+          "532f6683-e780-4e7a-8400-d4082850e9c2",
+          "34201904-1d73-413f-9a04-36f7291e4bd4",
+          "5583a650-8d8f-4074-b7fa-1bc65db48495"
+        ],
+        "settings": {
+          "title": "Lou Lou Tutorials",
+          "subtitle": "by founder Karen",
+          "popular_video_title": "most popular",
+          "all_video_title": "All videos",
+          "align_igtv_title": "top"
+        }
       }
     },
     "content_for_index": [
@@ -853,8 +964,7 @@
           "type": "announcement",
           "settings": {
             "background": "#000000",
-            "text_color": "#ffffff",
-            "content": "Announce something here"
+            "text_color": "#ffffff"
           }
         },
         "header": {
@@ -1241,8 +1351,7 @@
           "type": "announcement",
           "settings": {
             "background": "#f3f3f3",
-            "text_color": "#5c5c5c",
-            "content": "Announce something here"
+            "text_color": "#5c5c5c"
           }
         },
         "header": {
@@ -1630,8 +1739,7 @@
           "type": "announcement",
           "settings": {
             "background": "#f1e4d8",
-            "text_color": "#343434",
-            "content": "Announce something here"
+            "text_color": "#343434"
           }
         },
         "header": {
